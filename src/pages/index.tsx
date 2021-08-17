@@ -2,6 +2,10 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx, css } from '@emotion/react'
+import tw from 'twin.macro'
 
 const Home: NextPage = () => {
   return (
@@ -29,7 +33,14 @@ const Home: NextPage = () => {
           </a>
 
           <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
+            <h2
+              css={css`
+                color: red;
+                ${tw`border-red-300 border-2`}
+              `}
+            >
+              Learn &rarr;
+            </h2>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
