@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### features
+This starter contains has the following features:
 
-## Getting Started
+**Tailwind CSS** : Style our components using [twin.macro](https://github.com/ben-rogerson/twin.macro) to add Tailwind classes to your project.
+**Emotion** : Best-in-class CSS-in-JS support with Emotion. Write your own custom styled components with Emotion or use twin.macro inside your styled components to add Tailwind CSS classes alongside your custom styling.
+**PostCSS** : Use the flexibility of PostCSS to extend Tailwind's CSS or write your own CSS.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
+### CSS Prop to inline Tailwind Classes
+
+```js
+import { css } from "@emotion/react"
+import tw from "twin.macro"
+
+export default () => (
+  <div
+    css={css`
+      ${tw`flex items-center justify-between px-4 py-3`}
+      color:red
+    `}
+  >
+    <h1>Hello, world!</h1>
+    <h2>I'm a flex item too!</h2>
+  </div>
+)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Directory structure
+A quick look at the top-level files and directories you'll see inside this project.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+    .
+    ├── .babelrc
+    ├── .gitignore
+    ├── .nvmrc
+    ├── .yarn
+    ├── .yarnrc
+    ├── .prettierrc.json
+    ├── .eslintrc.json
+    ├── .husky/
+    ├── .storybook/
+    ├── .vscode/
+    ├── README.md
+    ├── src/
+    ├── next.config.js
+    ├── package.json
+    ├── postcss.config.js
+    ├── public/
+    └── tailwind.config.js
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

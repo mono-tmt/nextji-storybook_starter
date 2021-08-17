@@ -12,6 +12,11 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "engines": {
+    "node": "14.x",
+    "npm": "npmではなくyarnを利用してください、yarn.lockを活用することを推奨します",
+    "yarn": "1.22.11"
+  },
   "babelMacros": {
     "twin": {
       "preset": "emotion"
